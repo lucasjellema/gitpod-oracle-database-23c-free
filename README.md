@@ -28,3 +28,12 @@ A database user has been setup with username DEV and password DEV_PW in PDB `FRE
 ```
 sql DEV/DEV_PW@localhost:1521/FREEPDB1 
 ```  
+
+## Resources
+
+Introducing Oracle Database 23c Free – Developer Release - Blog by Gerald Venzl Senior Director - 4th April 2023 - https://blogs.oracle.com/database/post/oracle-database-23c-free
+
+Oracle Database Free Release Quick Start - https://www.oracle.com/database/free/get-started/
+
+Oracle Container Registry –Database Repositories  – [Oracle Database Free](https://container-registry.oracle.com/ords/f?p=113:4:116729705491998:::4:P4_REPOSITORY,AI_REPOSITORY,AI_REPOSITORY_NAME,P4_REPOSITORY_NAME,P4_EULA_ID,P4_BUSINESS_AREA_ID:1863,1863,Oracle%20Database%20Free,Oracle%20Database%20Free,1,0&cs=3a8c38qNZ-qkPvm0nwLnAj8Beg7b1gzprb9XP2yQtQSyeZc-9cHiFA5wGa_B0KICeppaUQkKeYPGmbLqNb74OFg) – this page provides details on the container image for the database and how to connect to it.
+
