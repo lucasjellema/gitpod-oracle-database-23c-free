@@ -25,7 +25,11 @@ alias sql="/workspace/gitpod-oracle-database-23c-free/sqlcl/bin/sql"
 sql sys/"TheSuperSecret1509!"@localhost:1521/free as sysdba 
 ```  
 
-A database user has been setup with username DEV and password DEV_PW in PDB `FREEPDB1`. A connection for this user is created in VS Code Oracle Developer Tools. Connect through SQLcl can be done using:
+A database user has been setup with username DEV and password DEV_PW in PDB `FREEPDB1`. The new role DB_DEVELOPER_ROLE  (introduced in 23c to supplement and replace role RESOURCE) is granted to this user.
+
+A connection for this user is created in VS Code Oracle Developer Tools. 
+
+Connect through SQLcl can be done using:
 
 ```
 alias sql="/workspace/gitpod-oracle-database-23c-free/sqlcl/bin/sql"
