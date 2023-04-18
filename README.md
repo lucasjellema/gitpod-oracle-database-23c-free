@@ -112,6 +112,13 @@ It is not spectacular in a visual way but the Status: Success message is reassur
 Here you see a telltale sign for 23c: select sysdate – at long last without including "FROM DUAL".
 
 
+# Formula One Sample Data
+
+As part of the database initialization, schema *f1data* is created in the FREEPDB1 database. This schema contains 14 tables with over 600K records that describe various aspects of Formula One - circuits and races, drivers and constructors, results, laptimes and even pitstops.
+
+The data model is visualized in this diagram:
+![image](images/Picture 0-1.F1DATA_Schema.png)
+
 # Resources
 
 Introducing Oracle Database 23c Free – Developer Release - Blog by Gerald Venzl Senior Director - 4th April 2023 - https://blogs.oracle.com/database/post/oracle-database-23c-free
