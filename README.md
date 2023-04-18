@@ -48,8 +48,8 @@ you need to bring the remote workspace to your laptop. Or rather: you create an 
 
 ![](images/sqldev-step1a.png)
 
-Alternatively, expand the File menu and click on Gitpod: Open in VS Code
-![](images/sqldev-step1b.png)
+Alternatively, click on the "hamburger" icon and click on the menu item *Gitpod: Open in VS Code*
+![](images/sqldev-step1b2.png)
 
 2. Accept the browser popup that notifies you of opening Visual Studio Code from the browser:
 
