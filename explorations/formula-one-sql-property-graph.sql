@@ -86,11 +86,12 @@ SELECT distinct nationality FROM GRAPH_TABLE (formula_one_graph
 );
 
 
--- who won twice on the same day in the year?
+-- Luck Day: who won twice on the same day in the year?
 SELECT * FROM GRAPH_TABLE (formula_one_graph
   MATCH (a IS driver ) -[b IS result where b.position = 1]-> (c IS race)
   ,     (a IS driver ) -[d IS result where d.position = 1]-> (e IS race)
   WHERE NOT VERTEX_EQUAL(c,e) and to_char(c.race_date,'DDMM') = to_char(e.race_date,'DDMM')
   COLUMNS (a.name as driver_one, c.race_date as race_date1 , e.race_date as race_date2)
-);
+)
+where race_date1 < race_date2;
 
