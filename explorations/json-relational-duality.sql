@@ -5,16 +5,19 @@
                'results' :
                  [ SELECT JSON {'position' : r.position,
                                 'points'   : r.points 
-                               , 'race' : [ select JSON {'circuit': c.name , 'race_date': rc.race_date } 
-                                            from races rc join circuits c on rc.circuitid = c.circuitid
-                                            where r.raceid =  rc.raceid 
-                                          ]
+                               , UNNEST                  
+                                   (SELECT JSON  {'circuit': c.name , 'race_date': rc.race_date } 
+                                    from races rc join circuits c on rc.circuitid = c.circuitid
+                                    where r.raceid =  rc.raceid
+                                   )
                                 }
                      FROM results r  
                      WHERE r.driverid = d.driverid 
                  ]
                }
-  FROM drivers d ;
+  FROM   drivers d 
+  where  d.nationality = 'Dutch'
+  ;
 
 
 
