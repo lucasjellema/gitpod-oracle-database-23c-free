@@ -11,7 +11,6 @@ tasks:
       gp sync-done database-running &&
       touch db-running &&
       /workspace/gitpod-oracle-database-23c-free/sqlcl/bin/sql sys/"TheSuperSecret1509!"@localhost:1521/free as sysdba @".prepare/create-user"            
-      /workspace/gitpod-oracle-database-23c-free/sqlcl/bin/sql f1data/"Formula1Database!"@localhost:1521/FREEPDB1 @".prepare/F1Data_setup-schema.sql" 
 
   - name: start container and run SQL*Plus session as user dev
     init: gp sync-await database-running
@@ -47,6 +46,7 @@ tasks:
        # create one external table file_ext using the directory f1_csv_dir to retrieve data from csv files and insert into tables in f1data schema Note: this step can take several minutes - it processes several 100Ks of records
        gp sync-await database-started &&
        sleep 10s &&       
+       /workspace/gitpod-oracle-database-23c-free/sqlcl/bin/sql f1data/"Formula1Database!"@localhost:1521/FREEPDB1 @".prepare/F1Data_setup-schema.sql" &&
        /workspace/gitpod-oracle-database-23c-free/sqlcl/bin/sql sys/"TheSuperSecret1509!"@localhost:1521/FREEPDB1 as sysdba @".prepare/F1Data_Create_Directory.sql" && 
        /workspace/gitpod-oracle-database-23c-free/sqlcl/bin/sql f1data/"Formula1Database!"@localhost:1521/FREEPDB1 @".prepare/F1Data_Import_csv.sql"
     command: |
